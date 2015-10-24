@@ -10,5 +10,21 @@
   <%= @topic.description %>
 </p>
 
+<table>
+  <thead>
+    <tr>
+      <th>Votes</th>
+      <th>Upvote</th>
+      <th>Downvote</th>
+      <th colspan="10"></th>
+    </tr>
+  </thead>
+  <tbody>
+	<td><%= pluralize(@topic.net_votes, "vote") %></td>
+	<td><%= button_to '+1', upvote_topic_path(@topic), method: :post %></td>
+	<td><%= button_to '-1', downvote_topic_path(@topic), method: :post %></td>
+	</tbody>
+</table>
+
 <%= link_to 'Edit', edit_topic_path(@topic) %> |
 <%= link_to 'Back', topics_path %>

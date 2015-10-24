@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151024220131) do
+ActiveRecord::Schema.define(version: 20151024221604) do
 
   create_table "topics", force: :cascade do |t|
     t.string   "title"
@@ -22,8 +22,9 @@ ActiveRecord::Schema.define(version: 20151024220131) do
 
   create_table "votes", force: :cascade do |t|
     t.integer  "topic_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.boolean  "value",      default: true, null: false
   end
 
 end
